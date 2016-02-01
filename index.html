@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Bootstrap-jalali-datepicker by mousavian</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/bootstrap-datepicker.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -29,31 +32,116 @@
       </header>
       <section>
         <h3>
-<a name="welcome-to-bootstrap-jalali-datepicker" class="anchor" href="#welcome-to-bootstrap-jalali-datepicker"><span class="octicon octicon-link"></span></a>Welcome to Bootstrap Jalali Datepicker</h3>
+          <a name="welcome-to-bootstrap-jalali-datepicker" class="anchor" href="#welcome-to-bootstrap-jalali-datepicker"><span class="octicon octicon-link"></span></a>Welcome to Bootstrap Jalali Datepicker
+        </h3>
 
-<p>This is a fork of <a href="https://github.com/ikelin/bootstrap-datepicker">ikelin</a>'s original code.
-The jQuery UI Datepicker widget customized for Jalali Calendar (Shamsi, شمسی) using in Iran.</p>
+        <p>This is a fork of <a href="https://github.com/ikelin/bootstrap-datepicker">ikelin</a>'s original code.
+        The jQuery UI Datepicker widget customized for Jalali Calendar (Shamsi, شمسی) using in Iran.</p>
 
-<h3>
-<a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How to Use</h3>
+        <h3>
+          <a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How to Use
+        </h3>
 
-<p>To create a simple date picker:
-<code>$("#datepicker").datepicker();</code></p>
+        <p>To create a simple date picker:
+        <code>$("#datepicker").datepicker();</code></p>
 
-<p>To set RTL mode:
-<code>$("#datepicker").datepicker({
-     isRTL: true
-});
-</code></p>
+        <p>To set RTL mode:
+          <code>
+            $("#datepicker").datepicker({
+                 isRTL: true
+            });
+          </code>
+        </p>
 
-<p>More options avaiable in Demo folder.</p>
+        <form>
+          <div class="form-group">
+            <label for="datepicker0">Datepicker</label>
+            <input id="datepicker0" type="text" class="form-control" style="position:relative; z-index:100">
+          </div>
+          <div class="form-group">
+            <label for="datepicker1">Datepicker with bootstrap icon button</label>
+            <div class="input-group">
+              <input id="datepicker1" class="form-control" type="text">
+              <div class="input-group-btn">
+                <button id="datepicker1btn" class="btn btn-default" type="button"><i class="glyphicon glyphicon-calendar"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="datepicker2">Datepicker with other months selectable (jQuery option)</label>
+            <input class="form-control" type="text" id="datepicker2" />
+          </div>
+          <div class="form-group">
+            <label for="datepicker3">Datepicker with 3 months and button panel (jQuery option)</label>
+            <input class="form-control" type="text" id="datepicker3" />
+          </div>
+          <div class="form-group">
+            <label for="datepicker4">Datepicker with change month/year (jQuery option)</label>
+            <input class="form-control" type="text" id="datepicker4" />
+          </div>
+          <div class="form-group">
+            <label for="datepicker5">Datepicker with limited selection to within the next 14 days (jQuery option)</label>
+            <input class="form-control" type="text" id="datepicker5" />
+          </div>
+          <div class="form-group">
+            <label for="datepicker6">Datepicker with RTL and date format (jQuery option)</label>
+            <input class="form-control" type="text" id="datepicker6">
+          </div>
+          <div class="form-group">
+            <label for="datepicker6">Datepicker </label>
+            <div id="datepicker7"></div>
+          </div>
+        </form>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/mousavian">mousavian</a></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="javascripts/bootstrap-datepicker.min.js"></script>
+    <script src="javascripts/bootstrap-datepicker.fa.min.js"></script>
     <script src="javascripts/scale.fix.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#datepicker0").datepicker();
+    
+        $("#datepicker1").datepicker();
+        $("#datepicker1btn").click(function(event) {
+          event.preventDefault();
+          $("#datepicker1").focus();
+        })
+    
+        $("#datepicker2").datepicker({
+          showOtherMonths: true,
+          selectOtherMonths: true
+        });
+    
+        $("#datepicker3").datepicker({
+          numberOfMonths: 3,
+          showButtonPanel: true
+        });
+    
+        $("#datepicker4").datepicker({
+          changeMonth: true,
+          changeYear: true
+        });
+    
+        $("#datepicker5").datepicker({
+          minDate: 0,
+          maxDate: "+14D"
+        });
+    
+        $("#datepicker6").datepicker({
+          isRTL: true,
+          dateFormat: "d/m/yy"
+        });
+    
+        $("#datepicker7").datepicker();
+      });
+    </script>
     
   </body>
 </html>
