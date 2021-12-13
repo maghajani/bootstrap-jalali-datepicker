@@ -1081,7 +1081,8 @@
                         });
                     }
                 };
-                inst.dpDiv.zIndex($(input).zIndex()+1);
+                // DEPRECATED: inst.dpDiv.zIndex($(input).zIndex()+1);
+		inst.dpDiv.css({'z-index':$(input).css('z-index')+1});
                 $.datepicker._datepickerShowing = true;
 
                 // DEPRECATED: after BC for 1.8.x $.effects[ showAnim ] is not needed
